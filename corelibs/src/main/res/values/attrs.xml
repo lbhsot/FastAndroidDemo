@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularBar">
+        <attr name="circularColor" format="color" />
+        <attr name="circularBackgroundColor" format="color" />
+        <attr name="circularWidth" format="dimension" />
+    </declare-styleable>
+</resources>
