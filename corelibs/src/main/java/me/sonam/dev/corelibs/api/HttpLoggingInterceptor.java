@@ -30,7 +30,6 @@ public class HttpLoggingInterceptor implements Interceptor {
         long t1 = System.nanoTime();
 
         Request.Builder builder = request.newBuilder();
-        builder = builder.addHeader("Cookie", RxRetrofitApp.getCookie());
         if (!RxRetrofitApp.getCookie().equals("")){
             builder = builder.addHeader("Cookie", RxRetrofitApp.getCookie());
         }

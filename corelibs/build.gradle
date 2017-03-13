@@ -38,4 +38,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'cn.finalteam:galleryfinal:1.4.8.7'
     compile 'com.liulishuo.filedownloader:library:0.3.2'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
 }

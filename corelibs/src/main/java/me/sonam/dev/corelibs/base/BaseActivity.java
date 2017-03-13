@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
 import me.sonam.dev.corelibs.common.AppManager;
+import me.sonam.dev.corelibs.common.Configuration;
 import me.sonam.dev.corelibs.utils.ToastMgr;
 import me.sonam.dev.corelibs.views.LoadingDialog;
 import rx.Observable;
@@ -25,6 +27,8 @@ import rx.Observable;
  * Created by Administrator on 2017/2/23.
  */
 public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V>> extends RxAppCompatActivity implements BaseView{
+
+    private static final String TAG = "BaseActivity";
 
     protected T presenter;
     private LoadingDialog loadingDialog;
@@ -158,6 +162,15 @@ public abstract class BaseActivity<V extends BaseView, T extends BasePresenter<V
     @Override
     public void showEmptyHint() {
 
+    }
+
+    @Override
+    public void showError(Throwable e) {
+        showToast(e.getMessage());
+        if (Configuration.isShowNetworkParams()){
+            Log.e(TAG, e.getMessage());
+        }
+        hideLoading();
     }
 
     @Override

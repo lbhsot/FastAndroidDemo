@@ -5,7 +5,10 @@ import android.content.Context;
 import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.FragmentEvent;
 
+import java.util.List;
+
 import me.sonam.dev.corelibs.api.ApiFactory;
+import me.sonam.dev.corelibs.entity.BaseRows;
 import rx.Observable;
 
 /**
@@ -18,9 +21,16 @@ import rx.Observable;
  *
  * Created by Administrator on 2017/2/23.
  */
-public abstract class BasePresenter<T extends BaseView> {
+public abstract class BasePresenter<T extends BaseView>{
 
-    protected T view;
+    private T view;
+
+    protected PresenterListener listener = null;
+
+    /**
+     * 初始化监听器
+     */
+    public abstract void initListener();
 
     /**
      * 页面初始化完成调用，此时页面控件已初始化完成
@@ -48,11 +58,14 @@ public abstract class BasePresenter<T extends BaseView> {
 
     /**
      * 绑定View与Presenter
+     * 初始化model,以及model回调监听器
      * @param view
      */
     public void attachView(T view){
         this.view = view;
         onViewAttach();
+        initListener();
+        setModel();
     }
 
     /**
@@ -71,6 +84,11 @@ public abstract class BasePresenter<T extends BaseView> {
     protected String getString(int resId){
         return view.getViewContext().getString(resId);
     }
+
+    /**
+     * Presenter与Model绑定
+     */
+    public abstract void setModel();
 
     /**
      * 字符串判空
@@ -114,4 +132,15 @@ public abstract class BasePresenter<T extends BaseView> {
     protected <T>T getApi(String key, Class<T> clz){
         return ApiFactory.getInstance().create(key, clz);
     }
+
+    /**
+     * Presenter与Model间回调接口
+     */
+    public interface PresenterListener<T extends BaseRows>{
+        void setResult(List<T> result);
+        void setResponseError(String error);
+        void setOtherStr(String str);
+        void setError(Throwable e);
+    }
+
 }

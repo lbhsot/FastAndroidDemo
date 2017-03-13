@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FastAndroidDemo.iml" filepath="$PROJECT_DIR$/FastAndroidDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FastAndroidDemo.iml" filepath="$PROJECT_DIR$/FastAndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/corelibs/corelibs.iml" filepath="$PROJECT_DIR$/corelibs/corelibs.iml" />
       <module fileurl="file://$PROJECT_DIR$/corelibs/corelibs.iml" filepath="$PROJECT_DIR$/corelibs/corelibs.iml" />
     </modules>
   </component>

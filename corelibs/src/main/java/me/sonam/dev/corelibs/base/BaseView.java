@@ -31,6 +31,8 @@ public interface BaseView {
 
     void showToastMessage(int message);
 
+    void showError(Throwable e);
+
     /**
      * 隐藏空列表提示
      */

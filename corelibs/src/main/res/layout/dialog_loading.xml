@@ -17,11 +17,22 @@
         android:paddingRight="10dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_parent"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/loading_bg"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp">-->
 
         <me.sonam.dev.corelibs.views.CircularBar
             android:id="@+id/circle"
             android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_height="40dp" 
             app:circularWidth="3dp"
             app:circularColor="#00b4ac"/>
 
@@ -31,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:textColor="#666"
-            android:textSize="14sp"
+            android:textSize="14sp" 
             android:maxWidth="200dp"
             android:visibility="gone"/>
     </LinearLayout>
